@@ -19,7 +19,7 @@ const ChatAside: React.FC<ChatAsideProps> = ({
     setIsMounted(true);
   }, []);
 
-  const switchTheme = (isMounted: boolean) => {
+  const switchTheme = () => {
     if (isMounted) {
       setTheme(theme === 'light' ? 'dark' : 'light');
     }
@@ -156,7 +156,7 @@ const ChatAside: React.FC<ChatAsideProps> = ({
         </NextLink>
         <button
           className="bg-purple-300 dark:bg-purple-500 px-3 py-1 rounded shadow-md font-semibold"
-          onClick={switchTheme(isMounted)}
+          onClick={switchTheme}
         >
           {theme}
         </button>
