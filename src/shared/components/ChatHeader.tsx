@@ -11,16 +11,26 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({
   handleHamburgerChange,
 }) => {
   return (
-    <header className="bg-gray-200 text-black dark:text-white dark:bg-gray-700 py-3 px-6 h-18">
+    <header className="bg-gray-50 dark:bg-gray-900 text-black dark:text-white dark:bg-gray-700 py-3 px-6 h-18">
       <div className="flex items-center">
         <div className="mr-3">
           <label
             className="flex items-center flex-col cursor-pointer w-8"
             htmlFor="hamburgerMenuButton"
           >
-            <span className="h-1 w-8 bg-black dark:bg-white mb-1"></span>
-            <span className="h-1 w-8 bg-black dark:bg-white"></span>
-            <span className="h-1 w-8 bg-black dark:bg-white mt-1"></span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={3}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
           </label>
           <input
             id="hamburgerMenuButton"

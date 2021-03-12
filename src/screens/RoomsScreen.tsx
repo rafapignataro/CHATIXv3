@@ -7,7 +7,7 @@ interface RoomsScreenProps {}
 
 const RoomsScreen: React.FC<RoomsScreenProps> = ({}) => {
   return (
-    <div className="flex flex-1 flex-col h-screen bg-gray-100 dark:bg-gray-600 text-black dark:text-white">
+    <div className="flex flex-1 flex-col h-screen text-black dark:text-white">
       <ChatHeader title="Rooms" />
       <div className="flex flex-col flex-wrap md:flex-row md:justify-around pt-4 px-6 ">
         <Room />

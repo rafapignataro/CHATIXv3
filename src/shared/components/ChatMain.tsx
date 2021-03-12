@@ -10,7 +10,7 @@ const USERNAME = 'rafix';
 
 const ChatMain: React.FC<ChatMainProps> = ({ messages }) => {
   return (
-    <main className="bg-gray-100 text-black dark:text-white dark:bg-gray-600 flex-1 flex flex-col pt-4 px-6 overflow-auto">
+    <main className="text-black dark:text-white flex-1 flex flex-col pt-4 px-6 overflow-auto">
       {messages &&
         messages.map((message) => (
           <ChatMessage
