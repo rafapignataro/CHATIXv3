@@ -7,10 +7,11 @@ interface RoomProps {}
 
 const Room: React.FC<RoomProps> = ({}) => {
   return (
-    <div className="bg-white dark:bg-gray-700 rounded p-3 mb-3 shadow-md max-h-32">
+    <div className="bg-white dark:bg-gray-700 rounded p-3 mb-4 shadow-md max-h-32 w-full lg:w-5/12 md:mx-2">
       <div className="flex items-center justify-between mb-6">
-        <h3 className="md:text-xl  truncate mr-8">
-          Falando sobre x, y e zdddddddddddddddddddddddddddddddddddddddd
+        <h3 className="md:text-xl truncate mr-8">
+          Falando sobre x, y e
+          zdddddddddddddddddddddddddddddddddddddddddedededeedededededed
         </h3>
         <div className="flex items-center justify-between">
           <p className="md:text-2xl font-semibold">12</p>

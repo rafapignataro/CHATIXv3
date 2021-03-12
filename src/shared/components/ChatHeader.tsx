@@ -26,7 +26,7 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({
   };
 
   return (
-    <header className="bg-gray-50 dark:bg-gray-900 dark:bg-gray-700 py-3 px-6 h-18 ">
+    <header className="bg-gray-50 dark:bg-gray-900 dark:bg-gray-700 py-3 px-4 md:px-6 h-18 ">
       <div className="flex items-center max-w-6xl mx-auto">
         <div className="mr-3">
           <label
