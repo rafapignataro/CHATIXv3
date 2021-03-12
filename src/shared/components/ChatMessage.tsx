@@ -11,13 +11,6 @@ interface ChatMessageProps {
 const ChatMessage: React.FC<ChatMessageProps> = ({ message, isAuthor }) => {
   const chatMessageContainerStyle = isAuthor ? 'self-end' : 'self-start';
 
-  // const chatMessageBoxStyle = isAuthor
-  //   ? 'bg-purple-300 dark:bg-purple-800 rounded-tr-none'
-  //   : 'bg-gray-50 dark:bg-gray-700 rounded-tl-none';
-  // const chatMessageHeaderStyle = isAuthor
-  //   ? 'text-purple-900 dark:text-white'
-  //   : 'text-gray-600 dark:text-gray-100';
-
   const chatMessageStyle = isAuthor
     ? 'bg-purple-300 dark:bg-purple-800 rounded-tr-none'
     : 'bg-gray-50 dark:bg-gray-700 rounded-tl-none';
