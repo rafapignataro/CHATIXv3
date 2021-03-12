@@ -9,11 +9,11 @@ const Room: React.FC<RoomProps> = ({}) => {
   return (
     <div className="bg-white dark:bg-gray-700 rounded p-3 mb-3 shadow-md max-h-32">
       <div className="flex items-center justify-between mb-6">
-        <h3 className="md:text-2xl font-semibold truncate mr-8">
+        <h3 className="md:text-xl  truncate mr-8">
           Falando sobre x, y e zdddddddddddddddddddddddddddddddddddddddd
         </h3>
         <div className="flex items-center justify-between">
-          <p className="md:text-2xl font-bold ">12</p>
+          <p className="md:text-2xl font-semibold">12</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -32,7 +32,7 @@ const Room: React.FC<RoomProps> = ({}) => {
       </div>
       <div className="flex justify-end">
         <NextLink href={`/room?id=${getRandom(3000)}`}>
-          <a className="bg-purple-500 hover:bg-purple-400 rounded py-1 px-4 font-bold text-white text-xl">
+          <a className="bg-purple-500 hover:bg-purple-400 rounded py-1 px-4 font-semibold text-white text-lg">
             Join
           </a>
         </NextLink>
