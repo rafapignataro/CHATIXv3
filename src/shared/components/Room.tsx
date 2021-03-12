@@ -7,19 +7,19 @@ interface RoomProps {}
 
 const Room: React.FC<RoomProps> = ({}) => {
   return (
-    <div className="bg-white dark:bg-gray-700 rounded p-3 mb-3 md:mx-1 shadow-md md:flex-initial max-h-32 max-w-full md:w-96">
+    <div className="bg-white dark:bg-gray-700 rounded p-3 mb-3 shadow-md max-h-32">
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-2xl font-semibold truncate mr-8">
+        <h3 className="md:text-2xl font-semibold truncate mr-8">
           Falando sobre x, y e zdddddddddddddddddddddddddddddddddddddddd
         </h3>
         <div className="flex items-center justify-between">
-          <p className="text-2xl font-bold ">12</p>
+          <p className="md:text-2xl font-bold ">12</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="w-5 h-5 ml-1"
+            className="w-4 h-4 md:w-5 md:h-5 ml-1"
           >
             <path
               strokeLinecap="round"

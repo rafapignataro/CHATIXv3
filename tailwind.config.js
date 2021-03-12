@@ -7,7 +7,13 @@ module.exports = {
   ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      sans: ['Montserrat', 'arial', 'sans-serif'],
+    },
     extend: {
+      screens: {
+        xs: '420px',
+      },
       colors: {
         black: '#121212',
         gray: colors.trueGray,

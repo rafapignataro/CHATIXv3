@@ -10,14 +10,17 @@ const USERNAME = 'rafix';
 
 const ChatMain: React.FC<ChatMainProps> = ({ messages }) => {
   return (
-    <main className="text-black dark:text-white flex-1 flex flex-col pt-4 px-6 overflow-auto">
-      {messages &&
-        messages.map((message) => (
-          <ChatMessage
-            message={message}
-            isAuthor={message.author === USERNAME}
-          />
-        ))}
+    <main className="flex-1 flex pt-4 px-6 overflow-auto">
+      <div className="flex flex-col w-full max-w-6xl mx-auto ">
+        {messages &&
+          messages.map((message, index) => (
+            <ChatMessage
+              key={index}
+              message={message}
+              isAuthor={message.author === USERNAME}
+            />
+          ))}
+      </div>
     </main>
   );
 };
