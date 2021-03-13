@@ -13,7 +13,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isAuthor }) => {
 
   const chatMessageStyle = isAuthor
     ? 'bg-purple-300 dark:bg-purple-800 rounded-tr-none'
-    : 'bg-gray-50 dark:bg-gray-700 rounded-tl-none';
+    : 'bg-gray-100 dark:bg-gray-700 rounded-tl-none';
 
   return (
     <div className={`flex mb-4 ${chatMessageContainerStyle}`}>
