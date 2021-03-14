@@ -1,16 +1,15 @@
 import { useTheme } from 'next-themes';
-import Image from 'next/image';
 import NextLink from 'next/link';
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { MouseEvent, useEffect, useState } from 'react';
 
 interface ChatHeaderProps {
   title: string;
-  handleHamburgerChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleHamburgerMenu: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
 const ChatHeader: React.FC<ChatHeaderProps> = ({
   title,
-  handleHamburgerChange,
+  handleHamburgerMenu,
 }) => {
   const { theme, setTheme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
@@ -28,37 +27,28 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({
   return (
     <header className="bg-gray-50 dark:bg-gray-900 border-b-2 border-gray-200 dark:border-gray-800 py-3 px-4 md:px-6 h-18 ">
       <div className="flex items-center max-w-6xl mx-auto">
-        <div className="mr-3">
-          <label
-            className="flex items-center flex-col cursor-pointer w-8"
-            htmlFor="hamburgerMenuButton"
-          >
+        <NextLink href="/rooms">
+          <a className="flex flex-col items-center justify-center text-xs mr-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className="h-8 w-8"
+              className="h-full w-7"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
+                d="M7 16l-4-4m0 0l4-4m-4 4h18"
               />
             </svg>
-          </label>
-          <input
-            id="hamburgerMenuButton"
-            className="hidden"
-            type="checkbox"
-            onChange={handleHamburgerChange}
-          />
-        </div>
+          </a>
+        </NextLink>
         <h2 className="text-xl">{title}</h2>
         <div className="flex ml-auto items-center">
-          <div className="flex items-center justify-center mx-5 ">
-            <button
+          <div className="flex items-center justify-center">
+            {/* <button
               className="flex flex-col items-center justify-center text-xs text-purple-400 hover:text-purple-500"
               onClick={switchTheme}
             >
@@ -94,34 +84,35 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({
                 </svg>
               )}
               {theme === 'light' ? 'Dark' : 'Light'}
+            </button> */}
+            <button
+              className="flex flex-col items-center justify-center font-semibold text-xs text-purple-400 hover:text-purple-500"
+              onClick={handleHamburgerMenu}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                className="h-full w-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+              Users
             </button>
-            <NextLink href="/rooms">
-              <a className="flex flex-col items-center justify-center text-xs ml-5">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="h-full w-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                  />
-                </svg>
-                Rooms
-              </a>
-            </NextLink>
           </div>
-          <Image
+          {/* <Image
             className="rounded-full "
             src="/perfil.png"
             width={32}
             height={32}
             alt="User logo"
-          />
+          /> */}
         </div>
       </div>
     </header>

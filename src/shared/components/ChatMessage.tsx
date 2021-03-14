@@ -24,6 +24,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isAuthor }) => {
             src="/perfil.png"
             width="25"
             height="25"
+            alt="User logo"
           />
         </div>
       )}

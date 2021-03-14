@@ -1,9 +1,9 @@
 import React, { ChangeEvent, MouseEvent, useState } from 'react';
 
-import ChatAside from '../shared/components/ChatAside';
-import ChatFooter from '../shared/components/ChatFooter';
-import ChatHeader from '../shared/components/ChatHeader';
-import ChatMain from '../shared/components/ChatMain';
+import ChatAside from '../../shared/components/ChatAside';
+import ChatFooter from '../../shared/components/ChatFooter';
+import ChatHeader from '../../shared/components/ChatHeader';
+import ChatMain from '../../shared/components/ChatMain';
 
 interface ChatRoomScreenProps {}
 
@@ -78,28 +78,24 @@ const chatRoom = {
 
 const ChatRoomScreen: React.FC<ChatRoomScreenProps> = ({}) => {
   const [isAsideOpen, setIsAsideOpen] = useState<boolean>(false);
-  const handleHamburgerChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setIsAsideOpen(event.target.checked);
-  };
 
-  const handleCloseHamburger = () => {
-    setIsAsideOpen(false);
+  const handleHamburgerMenu = () => {
+    console.log('pipi');
+    setIsAsideOpen(!isAsideOpen);
   };
 
   return (
-    <div className="flex h-screen relative">
+    <div className="h-full flex flex-col">
       <ChatAside
         isAsideOpen={isAsideOpen}
-        handleCloseHamburger={handleCloseHamburger}
+        handleHamburgerMenu={handleHamburgerMenu}
       />
-      <div className="flex flex-col flex-1 h-full">
-        <ChatHeader
-          title={chatRoom.name}
-          handleHamburgerChange={handleHamburgerChange}
-        />
-        <ChatMain messages={messages} />
-        <ChatFooter />
-      </div>
+      <ChatHeader
+        title={chatRoom.name}
+        handleHamburgerMenu={handleHamburgerMenu}
+      />
+      <ChatMain messages={messages} />
+      <ChatFooter />
     </div>
   );
 };

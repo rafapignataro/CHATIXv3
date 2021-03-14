@@ -1,6 +1,6 @@
 import React from 'react';
 
-import RoomsScreen from '../screens/RoomsScreen';
+import RoomsScreen from '../screens/Rooms/RoomsScreen';
 
 interface roomsProps {}
 
