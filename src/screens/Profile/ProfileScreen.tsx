@@ -6,8 +6,8 @@ interface ProfileScreenProps {}
 
 const ProfileScreen: React.FC<ProfileScreenProps> = ({}) => {
   return (
-    <AppLayout>
-      <h2>Profile</h2>
+    <AppLayout title="Profile">
+      <div className="bg-blue-300"></div>
     </AppLayout>
   );
 };

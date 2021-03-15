@@ -19,7 +19,9 @@ const AppFooterItem: React.FC<AppFooterItemProps> = ({
     <NextLink href={href}>
       <a
         className={`flex flex-col items-center justify-center mx-3 cursor-pointer px-2 py-1 rounded ${
-          isActive ? 'font-semibold text-purple-600' : 'hover:bg-gray-800'
+          isActive
+            ? 'font-semibold text-purple-600'
+            : 'hover:bg-gray-100 hover:dark:bg-gray-800'
         }`}
       >
         {children}

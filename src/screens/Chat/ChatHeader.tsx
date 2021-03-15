@@ -1,4 +1,3 @@
-import { useTheme } from 'next-themes';
 import NextLink from 'next/link';
 import React, { MouseEvent, useEffect, useState } from 'react';
 
@@ -11,19 +10,6 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({
   title,
   handleHamburgerMenu,
 }) => {
-  const { theme, setTheme } = useTheme();
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  const switchTheme = () => {
-    if (isMounted) {
-      setTheme(theme === 'light' ? 'dark' : 'light');
-    }
-  };
-
   return (
     <header className="bg-gray-50 dark:bg-gray-900 border-b-2 border-gray-200 dark:border-gray-800 py-3 px-4 md:px-6 h-18 ">
       <div className="flex items-center max-w-6xl mx-auto">
