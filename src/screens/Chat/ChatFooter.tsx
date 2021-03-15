@@ -4,7 +4,7 @@ interface ChatFooterProps {}
 
 const ChatFooter: React.FC<ChatFooterProps> = ({}) => {
   return (
-    <footer className="bg-white dark:bg-gray-900 border-t-2 border-gray-200 dark:border-gray-800 py-4 px-6 shadow-xl">
+    <footer className="bg-white dark:bg-gray-900 border-t-2 border-gray-200 dark:border-gray-800 py-4 px-4 md:px-6 shadow-xl">
       <form>
         <div className="flex items-center justify-between h-18 max-w-6xl mx-auto">
           <input

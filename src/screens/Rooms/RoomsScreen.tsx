@@ -1,48 +1,35 @@
 import React from 'react';
+import { HiPlus, HiSearch } from 'react-icons/hi';
 
-import AppFooterNav from '../../shared/components/AppFooterNav';
-import AppHeader from '../../shared/components/AppHeader';
+import Button from '../../shared/components/Button';
 import Room from '../../shared/components/Room';
+import AppLayout from '../../shared/layouts/AppLayout/AppLayout';
 
 interface RoomsScreenProps {}
 
 const RoomsScreen: React.FC<RoomsScreenProps> = ({}) => {
   return (
-    <div className="h-full flex flex-col">
-      <AppHeader />
-      <div className="flex items-center justify-between w-full mx-auto max-w-6xl px-4 md:px-6 py-3">
-        <div>
-          <form>
+    <AppLayout>
+      <div className="flex items-center justify-between w-full mx-auto max-w-6xl">
+        <form className="flex items-center justify-between flex-1 w-auto h-full">
+          <div className="flex flex-1 items-center bg-gray-200 dark:bg-gray-800 rounded h-full">
             <input
               type="text"
-              placeholder="Write your message"
-              className="bg-gray-200 dark:bg-gray-800 rounded flex-1 h-10 mr-3 px-4 focus:ring-2 focus:ring-purple-500"
+              placeholder="Search for rooms"
+              className="bg-gray-200 dark:bg-gray-800 rounded flex-1 px-4 focus:ring-0"
             />
-            <button className="bg-purple-600 hover:bg-purple-500 py-2 px-3 rounded text-white hover:bg-purple-500">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="h-full w-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={3}
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </button>
-          </form>
-        </div>
-        <div>
-          <button className="bg-purple-600 hover:bg-purple-500 py-2 px-3 rounded text-white hover:bg-purple-500">
-            Create room
-          </button>
+            <Button>
+              <HiSearch className="h-full w-5" />
+            </Button>
+          </div>
+        </form>
+        <div className="ml-3" style={{ height: '100%' }}>
+          <Button text="Create room">
+            <HiPlus className="h-full w-6" />
+          </Button>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row lg:flex-wrap lg:justify-center max-w-6xl mx-auto w-full px-4 md:px-6 py-2 overflow-auto flex-1">
+      <div className="flex flex-col flex-1 lg:flex-row lg:flex-wrap lg:justify-center max-w-6xl mx-auto w-full mt-3">
         <Room />
         <Room />
         <Room />
@@ -51,10 +38,10 @@ const RoomsScreen: React.FC<RoomsScreenProps> = ({}) => {
         <Room />
         <Room />
         <Room />
-        <div className="rounded p-3 mb-4  max-h-32 w-full lg:w-5/12 md:mx-2"></div>
+        <Room />
+        <div className="rounded p-3 mb-4 max-h-32 w-full lg:w-5/12 md:mx-2 flex-1"></div>
       </div>
-      <AppFooterNav />
-    </div>
+    </AppLayout>
   );
 };
 

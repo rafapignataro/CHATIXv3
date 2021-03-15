@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Message } from '../interfaces/Message';
+import { Message } from '../../shared/interfaces/Message';
 import ChatMessage from './ChatMessage';
 
 interface ChatMainProps {

@@ -1,9 +1,9 @@
 import React, { ChangeEvent, MouseEvent, useState } from 'react';
 
-import ChatAside from '../../shared/components/ChatAside';
-import ChatFooter from '../../shared/components/ChatFooter';
-import ChatHeader from '../../shared/components/ChatHeader';
-import ChatMain from '../../shared/components/ChatMain';
+import ChatAside from './ChatAside';
+import ChatFooter from './ChatFooter';
+import ChatHeader from './ChatHeader';
+import ChatMain from './ChatMain';
 
 interface ChatRoomScreenProps {}
 

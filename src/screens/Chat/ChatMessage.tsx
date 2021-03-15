@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { Message } from '../interfaces/Message';
+import { Message } from '../../shared/interfaces/Message';
 
 interface ChatMessageProps {
   message: Message;
