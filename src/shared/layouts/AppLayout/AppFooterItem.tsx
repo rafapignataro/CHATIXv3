@@ -1,18 +1,20 @@
 import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 interface AppFooterItemProps {
   href: string;
   title: string;
-  isActive: boolean;
 }
 
 const AppFooterItem: React.FC<AppFooterItemProps> = ({
   children,
   title,
-  isActive,
   href,
 }) => {
+  const router = useRouter();
+
+  const isActive = router.pathname === href;
   return (
     <NextLink href={href}>
       <a
