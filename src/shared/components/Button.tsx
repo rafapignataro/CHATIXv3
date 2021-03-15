@@ -1,6 +1,6 @@
 import React, { HTMLProps } from 'react';
 
-interface ButtonProps extends HTMLProps<HTMLButtonElement> {
+interface ButtonProps {
   text?: string;
 }
 
