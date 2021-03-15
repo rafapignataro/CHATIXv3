@@ -29,7 +29,7 @@ const RoomsScreen: React.FC<RoomsScreenProps> = ({}) => {
           </Button>
         </div>
       </div>
-      <div className="flex flex-col flex-1 lg:flex-row lg:flex-wrap lg:justify-center max-w-6xl mx-auto w-full mt-3">
+      <div className="flex-1 grid gap-2 grid-cols-1 md:grid-cols-2  lg:grid-cols-3 md:max-w-6xl w-full mt-3">
         <Room />
         <Room />
         <Room />
@@ -39,7 +39,20 @@ const RoomsScreen: React.FC<RoomsScreenProps> = ({}) => {
         <Room />
         <Room />
         <Room />
-        <div className="rounded p-3 mb-4 max-h-32 w-full lg:w-5/12 md:mx-2 flex-1"></div>
+        <Room />
+        <Room />
+
+        <Room />
+
+        <Room />
+
+        <Room />
+
+        <Room />
+
+        <Room />
+
+        {/* <div className="rounded p-3 mb-2 shadow-md flex-grow w-full h-28 lg:h-36 md:mx-1 lg:mx-2 md:w-5/12 lg:w-1/4"></div> */}
       </div>
     </AppLayout>
   );
