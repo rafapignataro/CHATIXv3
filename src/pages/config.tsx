@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ConfigScreen from '../screens/Config/ConfigScreen';
+import ConfigScreen from '../screens/ConfigScreen';
 
 interface configProps {}
 

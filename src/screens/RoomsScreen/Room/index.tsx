@@ -1,7 +1,7 @@
 import NextLink from 'next/link';
 import React from 'react';
 
-import getRandom from '../utils/getRandom';
+import getRandom from '../../../shared/utils/getRandom';
 
 interface RoomProps {}
 

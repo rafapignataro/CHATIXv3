@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ProfileScreen from '../screens/Profile/ProfileScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 interface profileProps {}
 

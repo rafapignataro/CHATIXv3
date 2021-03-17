@@ -16,7 +16,7 @@ class MyDocument extends Document {
             name="description"
             content="A multi-world chat for people talk about everything from anywhere."
           />
-          <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+          <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
         </Head>
         <body>
           <Main />

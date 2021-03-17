@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ChatScreen from '../screens/Chat/ChatScreen';
+import ChatScreen from '../screens/ChatScreen';
 
 interface ChatRoomProps {}
 

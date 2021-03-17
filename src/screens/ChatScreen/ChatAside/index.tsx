@@ -1,6 +1,6 @@
 import React, { MouseEvent, useEffect, useState } from 'react';
 
-import ConnectedUser from './ConnectedUser';
+import ConnectedUser from '../ConnectedUser';
 
 interface ChatAsideProps {
   isAsideOpen: boolean;

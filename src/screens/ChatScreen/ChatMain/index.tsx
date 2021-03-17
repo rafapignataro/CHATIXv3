@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { Message } from '../../shared/interfaces/Message';
-import ChatMessage from './ChatMessage';
+import { Message } from '../../../shared/interfaces/Message';
+import ChatMessage from '../ChatMessage';
 
 interface ChatMainProps {
   messages: Message[];
 }
+
 const USERNAME = 'rafix';
 
 const ChatMain: React.FC<ChatMainProps> = ({ messages }) => {

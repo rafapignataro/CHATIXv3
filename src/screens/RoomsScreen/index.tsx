@@ -2,8 +2,8 @@ import React from 'react';
 import { HiPlus, HiSearch } from 'react-icons/hi';
 
 import Button from '../../shared/components/Button';
-import Room from '../../shared/components/Room';
 import AppLayout from '../../shared/layouts/AppLayout/AppLayout';
+import Room from './Room';
 
 interface RoomsScreenProps {}
 
