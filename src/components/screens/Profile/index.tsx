@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AppLayout from '../../shared/layouts/AppLayout/AppLayout';
+import AppLayout from '../../layouts/AppLayout/AppLayout';
 
 interface ProfileScreenProps {}
 

@@ -1,8 +1,8 @@
 import { useTheme } from 'next-themes';
 import React, { useEffect, useState } from 'react';
 
-import Button from '../../shared/components/Button';
-import AppLayout from '../../shared/layouts/AppLayout/AppLayout';
+import AppLayout from '../../layouts/AppLayout/AppLayout';
+import Button from '../../shared/Button';
 
 interface ConfigScreenProps {}
 

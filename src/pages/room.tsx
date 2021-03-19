@@ -1,10 +1,10 @@
 import React from 'react';
 
-import ChatScreen from '../screens/ChatScreen';
+import ChatRoomScreen from '../components/screens/Chat';
 
 interface ChatRoomProps {}
 
 const ChatRoom: React.FC<ChatRoomProps> = ({}) => {
-  return <ChatScreen />;
+  return <ChatRoomScreen />;
 };
 export default ChatRoom;
