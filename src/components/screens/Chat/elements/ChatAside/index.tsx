@@ -1,13 +1,13 @@
 import React, { MouseEvent, useEffect, useState } from 'react';
 
-import ConnectedUser from '../ConnectedUser';
+import { ConnectedUser } from '../ConnectedUser';
 
 interface ChatAsideProps {
   isAsideOpen: boolean;
   handleHamburgerMenu: (event: MouseEvent<SVGSVGElement>) => void;
 }
 
-const ChatAside: React.FC<ChatAsideProps> = ({
+export const ChatAside: React.FC<ChatAsideProps> = ({
   isAsideOpen,
   handleHamburgerMenu,
 }) => {
@@ -47,4 +47,3 @@ const ChatAside: React.FC<ChatAsideProps> = ({
     </aside>
   );
 };
-export default ChatAside;

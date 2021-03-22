@@ -6,7 +6,7 @@ interface ChatHeaderProps {
   handleHamburgerMenu: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const ChatHeader: React.FC<ChatHeaderProps> = ({
+export const ChatHeader: React.FC<ChatHeaderProps> = ({
   title,
   handleHamburgerMenu,
 }) => {
@@ -104,4 +104,3 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({
     </header>
   );
 };
-export default ChatHeader;

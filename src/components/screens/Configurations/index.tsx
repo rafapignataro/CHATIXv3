@@ -8,16 +8,14 @@ interface ConfigScreenProps {}
 
 const ConfigScreen: React.FC<ConfigScreenProps> = ({}) => {
   const { theme, setTheme } = useTheme();
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
+    if (!theme) setTheme('light');
   }, []);
 
   const switchTheme = () => {
-    if (isMounted) {
-      setTheme(theme === 'light' ? 'dark' : 'light');
-    }
+    console.log(theme);
+    setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
   return (
@@ -25,7 +23,7 @@ const ConfigScreen: React.FC<ConfigScreenProps> = ({}) => {
       <div className="w-full max-w-6xl mx-auto">
         <div className="flex justify-between items-center mb-4">
           <p>Change your theme</p>
-          <Button text={theme} onClick={switchTheme} />
+          <Button text={theme ? theme : 'light'} onClick={switchTheme} />
         </div>
       </div>
     </AppLayout>

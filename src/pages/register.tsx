@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { ProfileScreen } from '../components/screens/Profile';
+import { RegisterScreen } from '../components/screens/Register';
 
 interface profileProps {}
 
 const profile: React.FC<profileProps> = ({}) => {
-  return <ProfileScreen />;
+  return <RegisterScreen />;
 };
 export default profile;

@@ -1,14 +1,17 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { Message } from '../../../shared/interfaces/Message';
+import { Message } from '../../interfaces/Message';
 
 interface ChatMessageProps {
   message: Message;
   isAuthor: boolean;
 }
 
-const ChatMessage: React.FC<ChatMessageProps> = ({ message, isAuthor }) => {
+export const ChatMessage: React.FC<ChatMessageProps> = ({
+  message,
+  isAuthor,
+}) => {
   const chatMessageContainerStyle = isAuthor ? 'self-end' : 'self-start';
 
   const chatMessageStyle = isAuthor
@@ -45,5 +48,3 @@ const ChatMessage: React.FC<ChatMessageProps> = ({ message, isAuthor }) => {
     </div>
   );
 };
-
-export default ChatMessage;

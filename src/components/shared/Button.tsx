@@ -3,8 +3,7 @@ import { IconContext } from 'react-icons/lib';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
-  hFull?: boolean;
-  Icon: React.ComponentType;
+  Icon?: React.ComponentType;
   onClick?: () => void;
 }
 
@@ -13,15 +12,12 @@ const Button: React.FC<ButtonProps> = ({
   text,
   Icon,
   onClick,
-  hFull,
   ...props
 }) => {
   return (
     <button
       {...props}
-      className={`flex items-center justify-between bg-purple-600 hover:bg-purple-500 py-2 px-3 rounded text-white hover:bg-purple-500 focus:outline-none ${
-        hFull && 'h-full'
-      }`}
+      className="flex items-center justify-between bg-purple-600 hover:bg-purple-500 py-2 px-3 rounded text-white hover:bg-purple-500 focus:outline-none h-10"
       onClick={onClick}
     >
       {Icon && (
@@ -29,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
           <Icon />
         </IconContext.Provider>
       )}
-      {text && <p className="hidden md:block md:ml-2">{text}</p>}
+      {text && <p className={`${Icon && 'hidden md:block md:ml-2'}`}>{text}</p>}
     </button>
   );
 };

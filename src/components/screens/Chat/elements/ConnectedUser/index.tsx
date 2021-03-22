@@ -3,7 +3,7 @@ import React from 'react';
 
 interface ConnectedUserProps {}
 
-const ConnectedUser: React.FC<ConnectedUserProps> = ({}) => {
+export const ConnectedUser: React.FC<ConnectedUserProps> = ({}) => {
   return (
     <div className="flex items-center justify-start mb-1 px-1 py-1 rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800">
       <Image
@@ -19,4 +19,3 @@ const ConnectedUser: React.FC<ConnectedUserProps> = ({}) => {
     </div>
   );
 };
-export default ConnectedUser;
