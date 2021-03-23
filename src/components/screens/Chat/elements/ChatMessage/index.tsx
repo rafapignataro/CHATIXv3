@@ -32,7 +32,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
         </div>
       )}
       <div
-        className={`flex flex-col ${isAuthor ? 'items-end' : 'items-start'}`}
+        className={`flex  flex-col ${isAuthor ? 'items-end' : 'items-start'}`}
       >
         <div
           className={`flex items-center w-full text-xs mb-0.5 justify-${
