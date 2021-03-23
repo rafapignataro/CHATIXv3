@@ -31,7 +31,9 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
           />
         </div>
       )}
-      <div>
+      <div
+        className={`flex flex-col ${isAuthor ? 'items-end' : 'items-start'}`}
+      >
         <div
           className={`flex items-center w-full text-xs mb-0.5 justify-${
             isAuthor ? 'end' : 'start'
@@ -40,7 +42,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
           {message.author} - {message.date}
         </div>
         <div
-          className={`py-2 px-3  text-sm rounded-md max-w-xs md:max-w-xl shadow-md relative ${chatMessageStyle}`}
+          className={`inline-block py-2 px-3 text-sm rounded-md max-w-xs md:max-w-xl shadow-md relative ${chatMessageStyle}`}
         >
           {message.content}
         </div>

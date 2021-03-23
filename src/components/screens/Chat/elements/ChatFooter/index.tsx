@@ -4,7 +4,7 @@ import { FaLongArrowAltRight } from 'react-icons/fa';
 import { InputBarForm } from '../../../../shared/InputBarForm';
 
 interface ChatFooterProps {
-  handleSubmit: ({ message: string }) => void;
+  handleSubmit: (text: string) => void;
 }
 
 export const ChatFooter: React.FC<ChatFooterProps> = ({ handleSubmit }) => {
