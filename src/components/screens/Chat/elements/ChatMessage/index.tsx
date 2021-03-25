@@ -44,7 +44,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
         <div
           className={`inline-block py-2 px-3 text-sm rounded-md max-w-xs md:max-w-xl shadow-md relative ${chatMessageStyle}`}
         >
-          {message.content}
+          a{message.content}
         </div>
       </div>
     </div>
