@@ -22,8 +22,8 @@ export const ChatMain: React.FC<ChatMainProps> = ({ messages }) => {
   useEffect(() => scrollToBottom(), [messages]);
 
   return (
-    <main className="flex-1 flex pt-4 px-4 md:px-6 overflow-auto">
-      <div className="flex flex-col w-full max-w-6xl mx-auto ">
+    <main className="flex-1 flex pt-4 overflow-auto relative">
+      <div className="flex flex-col w-full max-w-6xl mx-auto px-3 absolute left-0 right-0">
         {messages &&
           messages.map((message, index) => (
             <ChatMessage
