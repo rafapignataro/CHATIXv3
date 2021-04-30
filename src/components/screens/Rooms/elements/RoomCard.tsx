@@ -40,10 +40,10 @@ export const RoomCard = ({}: RoomCardProps) => {
           zdddddddddddddddddddddddddddddddddddddddddedededeedededededed
         </Heading>
         <HStack spacing="1" mb="4">
-          <Text bg="gray.900" fontSize="small" borderRadius="md" px="2">
+          <Text bg="gray.600" fontSize="small" borderRadius="md" px="2">
             Portuguese
           </Text>
-          <Text bg="gray.900" fontSize="small" borderRadius="md" px="2">
+          <Text bg="gray.600" fontSize="small" borderRadius="md" px="2">
             Food
           </Text>
         </HStack>
