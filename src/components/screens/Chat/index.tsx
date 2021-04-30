@@ -2,7 +2,6 @@ import { Flex } from '@chakra-ui/react';
 import React, { ChangeEvent, MouseEvent, useEffect, useState } from 'react';
 import { ChatDrawerProvider } from './contexts/ChatDrawerContext';
 
-import { ChatAside } from './elements/ChatAside';
 import { ChatFooter } from './elements/ChatFooter';
 import { ChatHeader } from './elements/ChatHeader';
 import { ChatMain } from './elements/ChatMain';
