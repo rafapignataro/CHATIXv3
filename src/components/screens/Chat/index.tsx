@@ -1,4 +1,6 @@
+import { Flex } from '@chakra-ui/react';
 import React, { ChangeEvent, MouseEvent, useEffect, useState } from 'react';
+import { ChatDrawerProvider } from './contexts/ChatDrawerContext';
 
 import { ChatAside } from './elements/ChatAside';
 import { ChatFooter } from './elements/ChatFooter';
@@ -9,13 +11,6 @@ import { Message } from './interfaces/Message';
 interface ChatRoomScreenProps {}
 
 const MESSAGES = [
-  {
-    author: 'Rafael 1',
-    date: '13:59pm',
-    content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius consequatur quam aut et necessitatibus sapiente reiciendis officiis suscipit odio, illo eligendi mollitia, iusto ut nisi a. Laborum mollitia odit facere officia quo fuga quidem magnam praesentium odio, sint ab delectus!',
-    img_url: null,
-  },
   {
     author: 'Rafael 2',
     date: '11:33pm',
@@ -122,8 +117,10 @@ export const ChatRoomScreen: React.FC<ChatRoomScreenProps> = ({}) => {
 
   const handleNewMessageSent = (text: string) => {
     const authors = {
-      0: 'Rafael 1',
-      1: 'Rafael 2',
+      0: 'Rafael Pignataro',
+      1: 'Lucas Zillig',
+      2: 'Vinicius Junqueira',
+      3: 'Leonardo Lopes',
     };
 
     const currentDate = new Date();
@@ -146,17 +143,12 @@ export const ChatRoomScreen: React.FC<ChatRoomScreenProps> = ({}) => {
   };
 
   return (
-    <div className="h-full flex flex-col">
-      <ChatAside
-        isAsideOpen={isAsideOpen}
-        handleHamburgerMenu={handleHamburgerMenu}
-      />
-      <ChatHeader
-        title={chatRoom.name}
-        handleHamburgerMenu={handleHamburgerMenu}
-      />
-      <ChatMain messages={messages} />
-      <ChatFooter handleSubmit={handleNewMessageSent} />
-    </div>
+    <ChatDrawerProvider>
+      <Flex direction="column" h="100vh">
+        <ChatHeader title={chatRoom.name} />
+        <ChatMain messages={messages} />
+        <ChatFooter handleSubmit={handleNewMessageSent} />
+      </Flex>
+    </ChatDrawerProvider>
   );
 };

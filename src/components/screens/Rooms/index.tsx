@@ -1,43 +1,64 @@
+import {
+  Flex,
+  Grid,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  SimpleGrid,
+} from '@chakra-ui/react';
 import React from 'react';
-import { FaPlus, FaSearch } from 'react-icons/fa';
+import { FiPlus, FiSearch } from 'react-icons/fi';
 
 import AppLayout from '../../layouts/AppLayout/AppLayout';
 import Button from '../../shared/Button';
-import { InputBarForm } from '../../shared/InputBarForm';
-import Room from './elements/Room';
+import { RoomCard } from './elements/RoomCard';
 
 interface RoomsScreenProps {}
 
-export const RoomsScreen: React.FC<RoomsScreenProps> = ({}) => {
+export const RoomsScreen = ({}: RoomsScreenProps) => {
   return (
     <AppLayout title="Rooms">
-      <div className="flex items-center justify-between w-full mx-auto max-w-6xl">
-        <InputBarForm
-          placeholder="Search for rooms"
-          Icon={FaSearch}
-          handleSubmit={() => {}}
-        />
-        <div className="ml-3">
-          <Button text="Create room" Icon={FaPlus} />
-        </div>
-      </div>
-      <div className="flex-1 grid gap-3 grid-cols-1 md:grid-cols-2  lg:grid-cols-3 md:max-w-6xl w-full mt-3">
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-        <Room />
-      </div>
+      <Flex
+        align="center"
+        justify="space-between"
+        mx="auto"
+        w="100%"
+        maxW={1280}
+      >
+        <Flex as="form" align="center">
+          <InputGroup>
+            <InputLeftElement
+              pointerEvents="none"
+              children={<FiSearch color="gray.300" />}
+            />
+            <Input placeholder="Search for rooms" bg="gray.800" border="0" />
+          </InputGroup>
+        </Flex>
+        <Button ml="4" text="Create room" Icon={FiPlus} />
+      </Flex>
+      <SimpleGrid
+        columns={[1, 1, 2, 3]}
+        spacing="4"
+        my="3"
+        w="100%"
+        maxW={1280}
+      >
+        <RoomCard />
+        <RoomCard />
+        <RoomCard />
+        <RoomCard />
+        <RoomCard />
+        <RoomCard />
+        <RoomCard />
+        <RoomCard />
+        <RoomCard />
+        <RoomCard />
+        <RoomCard />
+        <RoomCard />
+        <RoomCard />
+        <RoomCard />
+        <RoomCard />
+      </SimpleGrid>
     </AppLayout>
   );
 };

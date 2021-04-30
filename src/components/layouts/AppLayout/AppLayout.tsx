@@ -1,4 +1,5 @@
-import React from 'react';
+import { Flex } from '@chakra-ui/react';
+import React, { ReactNode } from 'react';
 
 import AppFooter from './AppFooter';
 import AppHeader from './AppHeader';
@@ -6,15 +7,16 @@ import AppMain from './AppMain';
 
 interface AppLayoutProps {
   title: string;
+  children: ReactNode;
 }
 
-const AppLayout: React.FC<AppLayoutProps> = ({ children, title }) => {
+const AppLayout = ({ children, title }: AppLayoutProps) => {
   return (
-    <div className="h-screen flex flex-col ">
+    <Flex h="100vh" direction="column">
       <AppHeader />
       <AppMain title={title}>{children}</AppMain>
       <AppFooter />
-    </div>
+    </Flex>
   );
 };
 export default AppLayout;

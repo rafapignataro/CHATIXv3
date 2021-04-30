@@ -1,19 +1,32 @@
+import { Avatar, Box, Flex, Icon, Text } from '@chakra-ui/react';
 import React from 'react';
+
+import { DiSenchatouch } from 'react-icons/di';
 
 interface AppHeaderProps {}
 
-const AppHeader: React.FC<AppHeaderProps> = ({}) => {
+const AppHeader = ({}: AppHeaderProps) => {
   return (
-    <header className="bg-gray-50 dark:bg-gray-900 border-b-2 border-gray-200 dark:border-gray-800 py-2 px-4 md:px-6 h-18 ">
-      <div className="flex items-center max-w-6xl mx-auto">
-        <h2 className="text-2xl">
-          Chatix
-          <span className="text-sm font-semibold text-gray-400 dark:text-gray-700">
-            v3
-          </span>
-        </h2>
-      </div>
-    </header>
+    <Box as="header" h="16" borderBottomWidth="2px" borderColor="gray.800">
+      <Flex
+        align="center"
+        justify="space-between"
+        h="100%"
+        w="100%"
+        maxW={1280}
+        mx="auto"
+        py="2"
+        px={['4', '4', '6']}
+      >
+        <Icon as={DiSenchatouch} fontSize="48" color="red" />
+        <Flex align="center">
+          <Text fontSize="sm" mr="2">
+            Rafael Pignataro
+          </Text>
+          <Avatar size="sm" name="Rafael Pignataro" />
+        </Flex>
+      </Flex>
+    </Box>
   );
 };
 export default AppHeader;

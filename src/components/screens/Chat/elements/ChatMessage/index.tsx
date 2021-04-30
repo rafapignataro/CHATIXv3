@@ -1,3 +1,4 @@
+import { Avatar, Flex, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
 
@@ -12,41 +13,48 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
   message,
   isAuthor,
 }) => {
-  const chatMessageContainerStyle = isAuthor ? 'self-end' : 'self-start';
-
-  const chatMessageStyle = isAuthor
-    ? 'bg-purple-300 dark:bg-purple-800 rounded-tr-none'
-    : 'bg-gray-100 dark:bg-gray-700 rounded-tl-none';
+  if (!isAuthor) {
+    return (
+      <Flex mb="4" w="100%" justify="flex-start">
+        <Flex maxW="75%">
+          <Flex mr="2">
+            <Avatar name={message.author} size="sm" />
+          </Flex>
+          <Flex direction="column" justify="flex-end">
+            <Text fontSize="xs">
+              {message.author} - {message.date}
+            </Text>
+            <Flex
+              bg="gray.800"
+              fontSize="sm"
+              p="2"
+              borderRadius="md"
+              borderTopLeftRadius="0"
+            >
+              {message.content}
+            </Flex>
+          </Flex>
+        </Flex>
+      </Flex>
+    );
+  }
 
   return (
-    <div className={`flex mb-4 ${chatMessageContainerStyle}`}>
-      {!isAuthor && (
-        <div className="hidden xs:flex items-start justify-center mr-2">
-          <Image
-            className="rounded-full shadow-md"
-            src="/perfil.png"
-            width="25"
-            height="25"
-            alt="User logo"
-          />
-        </div>
-      )}
-      <div
-        className={`flex  flex-col ${isAuthor ? 'items-end' : 'items-start'}`}
-      >
-        <div
-          className={`flex items-center w-full text-xs mb-0.5 justify-${
-            isAuthor ? 'end' : 'start'
-          }`}
-        >
-          {message.author} - {message.date}
-        </div>
-        <div
-          className={`inline-block py-2 px-3 text-sm rounded-md max-w-xs md:max-w-xl shadow-md relative ${chatMessageStyle}`}
-        >
-          {message.content}
-        </div>
-      </div>
-    </div>
+    <Flex mb="4" justify="flex-end">
+      <Flex maxW="75%">
+        <Flex direction="column" align="flex-end">
+          <Text fontSize="xs">{message.date} - You</Text>
+          <Flex
+            bg="gray.700"
+            fontSize="sm"
+            p="2"
+            borderRadius="md"
+            borderTopRightRadius="0"
+          >
+            {message.content}
+          </Flex>
+        </Flex>
+      </Flex>
+    </Flex>
   );
 };

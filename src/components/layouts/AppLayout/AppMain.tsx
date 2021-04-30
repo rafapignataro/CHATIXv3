@@ -1,17 +1,29 @@
-import React from 'react';
+import { Flex, Heading } from '@chakra-ui/react';
+import React, { ReactNode } from 'react';
 
 interface AppMainProps {
   title: string;
+  children: ReactNode;
 }
 
-const AppMain: React.FC<AppMainProps> = ({ children, title }) => {
+const AppMain = ({ children, title }: AppMainProps) => {
   return (
-    <main className="flex flex-col items-center flex-1 overflow-auto px-4 md:px-6 py-1 w-full">
-      <div className="flex justify-start w-full py-2  mx-auto max-w-6xl">
-        <h2 className="font-bold text-3xl md:text-4xl">{title}</h2>
-      </div>
+    <Flex
+      as="main"
+      direction="column"
+      align="center"
+      w="100%"
+      maxWidth={1280}
+      mx="auto"
+      flex="1"
+      overflow="auto"
+      px={['4', '4', '6']}
+    >
+      <Flex py="2" w="100%">
+        <Heading>{title}</Heading>
+      </Flex>
       {children}
-    </main>
+    </Flex>
   );
 };
 export default AppMain;

@@ -1,32 +1,47 @@
-import React, { ButtonHTMLAttributes, HTMLProps, MouseEvent, MouseEventHandler } from 'react';
+import React, {
+  ButtonHTMLAttributes,
+  HTMLProps,
+  MouseEvent,
+  MouseEventHandler,
+} from 'react';
 import { IconContext } from 'react-icons/lib';
+import {
+  Button as ChakraButton,
+  ButtonGroup,
+  Icon as ChakraIcon,
+  useBreakpointValue,
+  ButtonProps as ChakraButtonProps,
+} from '@chakra-ui/react';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends ChakraButtonProps {
   text?: string;
   Icon?: React.ComponentType;
   onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({
-  children,
-  text,
-  Icon,
-  onClick,
-  ...props
-}) => {
+const Button = ({ children, text, Icon, onClick, ...props }: ButtonProps) => {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
+  // if (isWideVersion)
+  //   return (
+
+  //   );
+
   return (
-    <button
+    <ChakraButton
       {...props}
-      className="flex items-center justify-between bg-purple-600 hover:bg-purple-500 py-2 px-3 rounded text-white hover:bg-purple-500 focus:outline-none h-10"
       onClick={onClick}
+      bg="gray.800"
+      rightIcon={<ChakraIcon as={Icon} />}
+      _hover={{
+        bg: 'gray.700',
+      }}
     >
-      {Icon && (
-        <IconContext.Provider value={{ className: `h-full w-5` }}>
-          <Icon />
-        </IconContext.Provider>
-      )}
-      {text && <p className={`${Icon && 'hidden md:block md:ml-2'}`}>{text}</p>}
-    </button>
+      {text}
+    </ChakraButton>
   );
 };
 export default Button;

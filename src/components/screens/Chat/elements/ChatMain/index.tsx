@@ -1,3 +1,4 @@
+import { Flex } from '@chakra-ui/react';
 import React, { ReactNode, useEffect, useRef, useState } from 'react';
 
 import { Message } from '../../interfaces/Message';
@@ -9,7 +10,7 @@ interface ChatMainProps {
 
 const USERNAME = 'Rafael 1';
 
-export const ChatMain: React.FC<ChatMainProps> = ({ messages }) => {
+export const ChatMain = ({ messages }: ChatMainProps) => {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -22,8 +23,22 @@ export const ChatMain: React.FC<ChatMainProps> = ({ messages }) => {
   useEffect(() => scrollToBottom(), [messages]);
 
   return (
-    <main className="flex-1 flex pt-4 overflow-auto relative">
-      <div className="flex flex-col w-full max-w-6xl mx-auto px-3 absolute left-0 right-0">
+    <Flex
+      as="main"
+      flex="1"
+      w="100%"
+      py="4"
+      overflow="auto"
+      position="relative"
+    >
+      <Flex
+        direction="column"
+        w="100%"
+        maxW={1280}
+        mx="auto"
+        position="absolute"
+        px={['4', '4', '6']}
+      >
         {messages &&
           messages.map((message, index) => (
             <ChatMessage
@@ -33,7 +48,7 @@ export const ChatMain: React.FC<ChatMainProps> = ({ messages }) => {
             />
           ))}
         <div ref={bottomRef}></div>
-      </div>
-    </main>
+      </Flex>
+    </Flex>
   );
 };

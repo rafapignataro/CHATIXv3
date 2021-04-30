@@ -8,7 +8,7 @@ import { theme } from '../styles/theme';
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
-      <div className="h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-50 relative">
+      <div className="h-screen relative">
         <Component {...pageProps} />
       </div>
     </ChakraProvider>

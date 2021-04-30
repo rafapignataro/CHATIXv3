@@ -18,7 +18,7 @@ export const ChatAside: React.FC<ChatAsideProps> = ({
       }`}
     >
       <div className="bg-gray-50 dark:bg-gray-900 flex items-center justify-between py-3 px-4 h-18">
-        <h1 className="text-lg mb-1">Connected Users</h1>
+        <h1 className="text-lg mb-1">Room 1459</h1>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
