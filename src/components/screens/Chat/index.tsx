@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import React, { ChangeEvent, MouseEvent, useEffect, useState } from 'react';
 import { ChatDrawerProvider } from './contexts/ChatDrawerContext';
 
@@ -102,7 +102,7 @@ const chatRoom = {
   name: 'Group 1559',
 };
 
-export const ChatRoomScreen: React.FC<ChatRoomScreenProps> = ({}) => {
+export const ChatRoomScreen = ({}: ChatRoomScreenProps) => {
   const [isAsideOpen, setIsAsideOpen] = useState<boolean>(false);
   const [messages, setMessages] = useState<Message[]>([]);
 
@@ -143,11 +143,9 @@ export const ChatRoomScreen: React.FC<ChatRoomScreenProps> = ({}) => {
 
   return (
     <ChatDrawerProvider>
-      <Flex direction="column" h="100vh">
-        <ChatHeader title={chatRoom.name} />
-        <ChatMain messages={messages} />
-        <ChatFooter handleSubmit={handleNewMessageSent} />
-      </Flex>
+      <ChatHeader title={chatRoom.name} />
+      <ChatMain messages={messages} />
+      <ChatFooter handleSubmit={handleNewMessageSent} />
     </ChatDrawerProvider>
   );
 };

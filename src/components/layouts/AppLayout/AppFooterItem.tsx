@@ -3,11 +3,11 @@ import {
   Icon as ChakraIcon,
   Text,
   Flex,
+  Box,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { IconContext } from 'react-icons/lib';
 
 interface AppFooterItemProps {
   href: string;
@@ -22,31 +22,16 @@ const AppFooterItem = ({ title, href, Icon }: AppFooterItemProps) => {
 
   return (
     <NextLink href={href} passHref>
-      <ChakraLink decoration="none" style={{ textDecoration: 'none' }}>
-        <Flex
-          direction="column"
-          align="center"
-          justify="space-between"
-          mx="4"
-          px="8"
-          py="2"
-          borderRadius="md"
-          textDecoration="none"
+      <Flex as="a" p="2">
+        <ChakraIcon
+          as={Icon}
+          fontSize="28"
+          color={isActive ? 'red.500' : 'gray.600'}
           _hover={{
-            bg: 'gray.700',
+            color: 'red.500',
           }}
-        >
-          <ChakraIcon
-            as={Icon}
-            mb="1"
-            fontSize="28"
-            color={isActive ? 'gray.50' : 'gray.300'}
-          />
-          {/* <Text fontSize="sm" color={isActive ? 'gray.50' : 'gray.300'}>
-            {title}
-          </Text> */}
-        </Flex>
-      </ChakraLink>
+        />
+      </Flex>
     </NextLink>
   );
 };

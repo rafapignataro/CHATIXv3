@@ -29,9 +29,15 @@ export const RoomsScreen = ({}: RoomsScreenProps) => {
           <InputGroup>
             <InputLeftElement
               pointerEvents="none"
-              children={<FiSearch color="gray.300" />}
+              children={<FiSearch color="gray.800" />}
             />
-            <Input placeholder="Search for rooms" bg="gray.800" border="0" />
+            <Input
+              placeholder="Search for rooms"
+              bg="gray.800"
+              focusBorderColor="red.500"
+              border="2px"
+              borderColor="transparent"
+            />
           </InputGroup>
         </Flex>
         <Button ml="4" text="Create room" Icon={FiPlus} />

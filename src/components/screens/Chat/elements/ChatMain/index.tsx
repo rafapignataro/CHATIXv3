@@ -37,7 +37,11 @@ export const ChatMain = ({ messages }: ChatMainProps) => {
         maxW={1280}
         mx="auto"
         position="absolute"
+        left="0"
+        right="0"
+        top="0"
         px={['4', '4', '6']}
+        mt="4"
       >
         {messages &&
           messages.map((message, index) => (

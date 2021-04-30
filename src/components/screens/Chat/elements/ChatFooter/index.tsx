@@ -34,7 +34,13 @@ export const ChatFooter: React.FC<ChatFooterProps> = ({ handleSubmit }) => {
             pointerEvents="none"
             children={<FiEdit3 color="gray.300" />}
           />
-          <Input placeholder="Type your message" bg="gray.800" border="0" />
+          <Input
+            placeholder="Type your message"
+            bg="gray.800"
+            focusBorderColor="red.500"
+            border="2px"
+            borderColor="transparent"
+          />
         </InputGroup>
         <IconButton
           aria-label="Group info"

@@ -19,11 +19,12 @@ interface RoomCardProps {}
 
 export const RoomCard = ({}: RoomCardProps) => {
   return (
-    <NextLink href={'/room'} passHref>
+    <NextLink href={'/room'}>
       <Flex
+        as="a"
         direction="column"
         justify="space-between"
-        borderWidth="3px"
+        borderWidth="2px"
         borderColor="gray.800"
         borderRadius="md"
         bg="gray.800"
