@@ -7,15 +7,15 @@ import {
 } from '@chakra-ui/react';
 import React, { FormEvent, useState } from 'react';
 import { FiEdit3, FiSend } from 'react-icons/fi';
-import { IconButton } from '../../../../shared/IconButton';
+import { IconButton } from '../../../shared/IconButton';
 
-import { InputBarForm } from '../../../../shared/InputBarForm';
+import { InputBarForm } from '../../../shared/InputBarForm';
 
 interface ChatFooterProps {
   handleSubmit: (text: string) => void;
 }
 
-export const ChatFooter: React.FC<ChatFooterProps> = ({ handleSubmit }) => {
+export const ChatFooter = ({ handleSubmit }: ChatFooterProps) => {
   return (
     <Box as="footer" h="16" borderTopWidth="2px" borderColor="gray.800">
       <Flex

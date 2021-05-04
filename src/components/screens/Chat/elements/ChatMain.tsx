@@ -1,8 +1,8 @@
 import { Flex } from '@chakra-ui/react';
 import React, { ReactNode, useEffect, useRef, useState } from 'react';
 
-import { Message } from '../../interfaces/Message';
-import { ChatMessage } from '../ChatMessage';
+import { Message } from '../interfaces/Message';
+import { ChatMessage } from './ChatMessage';
 
 interface ChatMainProps {
   messages: Message[];

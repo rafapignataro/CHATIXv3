@@ -1,10 +1,10 @@
 import { Box, Flex, Heading } from '@chakra-ui/react';
-import { IconButton } from '../../../../shared/IconButton';
+import { IconButton } from '../../../shared/IconButton';
 import NextLink from 'next/link';
 import React, { MouseEvent, useEffect, useState } from 'react';
-import Button from '../../../../shared/Button';
+import Button from '../../../shared/Button';
 import { FiHome, FiInfo } from 'react-icons/fi';
-import { useChatDrawer } from '../../contexts/ChatDrawerContext';
+import { useChatDrawer } from '../contexts/ChatDrawerContext';
 
 interface ChatHeaderProps {
   title: string;

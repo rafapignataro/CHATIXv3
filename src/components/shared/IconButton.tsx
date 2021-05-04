@@ -9,7 +9,7 @@ interface IconButtonProps extends ChakraIconButtonProps {}
 export const IconButton = ({ ...props }: IconButtonProps) => {
   return (
     <ChakraIconButton
-      color="gray.700"
+      color="gray.400"
       bg="transparent"
       _hover={{
         color: 'red.500',

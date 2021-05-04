@@ -34,10 +34,12 @@ const Button = ({ children, text, Icon, onClick, ...props }: ButtonProps) => {
     <ChakraButton
       {...props}
       onClick={onClick}
-      bg="gray.800"
+      bg="gray.900"
+      borderColor="gray.600"
+      borderWidth="2px"
       rightIcon={<ChakraIcon as={Icon} />}
       _hover={{
-        bg: 'gray.700',
+        bg: 'gray.600',
       }}
     >
       {text}

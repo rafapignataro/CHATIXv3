@@ -26,7 +26,7 @@ const AppFooterItem = ({ title, href, Icon }: AppFooterItemProps) => {
         <ChakraIcon
           as={Icon}
           fontSize="28"
-          color={isActive ? 'red.500' : 'gray.600'}
+          color={isActive ? 'red.500' : 'gray.400'}
           _hover={{
             color: 'red.500',
           }}

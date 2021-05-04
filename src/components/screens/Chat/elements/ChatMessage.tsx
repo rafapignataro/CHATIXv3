@@ -2,17 +2,14 @@ import { Avatar, Flex, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
 
-import { Message } from '../../interfaces/Message';
+import { Message } from '../interfaces/Message';
 
 interface ChatMessageProps {
   message: Message;
   isAuthor: boolean;
 }
 
-export const ChatMessage: React.FC<ChatMessageProps> = ({
-  message,
-  isAuthor,
-}) => {
+export const ChatMessage = ({ message, isAuthor }: ChatMessageProps) => {
   if (!isAuthor) {
     return (
       <Flex mb="4" w="100%" justify="flex-start">
@@ -30,6 +27,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({
               p="2"
               borderRadius="md"
               borderTopLeftRadius="0"
+              color="gray.200"
             >
               {message.content}
             </Flex>

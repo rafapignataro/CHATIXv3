@@ -1,6 +1,7 @@
 import { Box, Flex } from '@chakra-ui/react';
 import React, { ChangeEvent, MouseEvent, useEffect, useState } from 'react';
 import { ChatDrawerProvider } from './contexts/ChatDrawerContext';
+import { ChatDrawer } from './elements/ChatDrawer';
 
 import { ChatFooter } from './elements/ChatFooter';
 import { ChatHeader } from './elements/ChatHeader';
@@ -143,6 +144,7 @@ export const ChatRoomScreen = ({}: ChatRoomScreenProps) => {
 
   return (
     <ChatDrawerProvider>
+      <ChatDrawer />
       <ChatHeader title={chatRoom.name} />
       <ChatMain messages={messages} />
       <ChatFooter handleSubmit={handleNewMessageSent} />

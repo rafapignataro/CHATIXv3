@@ -12,7 +12,6 @@ const SidebarDrawerContext = createContext({} as ChatDrawerContextData);
 
 export function ChatDrawerProvider({ children }: ChatDrawerProviderProps) {
   const disclosure = useDisclosure();
-  const router = useRouter();
 
   return (
     <SidebarDrawerContext.Provider value={disclosure}>

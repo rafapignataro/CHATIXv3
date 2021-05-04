@@ -19,12 +19,6 @@ const AppHeader = ({}: AppHeaderProps) => {
         px={['4', '4', '6']}
       >
         <Icon as={DiSenchatouch} fontSize="48" color="red.500" />
-        <Flex align="center">
-          <Text fontSize="sm" mr="2">
-            Rafael Pignataro
-          </Text>
-          <Avatar size="sm" name="Rafael Pignataro" />
-        </Flex>
       </Flex>
     </Box>
   );
