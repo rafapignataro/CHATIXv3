@@ -16,6 +16,8 @@ interface ChatDrawerProps {}
 export const ChatDrawer: React.FC<ChatDrawerProps> = ({}) => {
   const { isOpen, onClose } = useChatDrawer();
 
+  console.log('drawer', isOpen);
+
   return (
     <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
       <DrawerOverlay>

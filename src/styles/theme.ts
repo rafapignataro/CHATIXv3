@@ -4,14 +4,15 @@ import { extendTheme } from '@chakra-ui/react';
 
 export const theme = extendTheme({
   colors: {
-    'gray.900': '#0A0A0A',
-    'gray.800': '#141414',
-    'gray.700': '#1F1F1F',
-    'gray.600': '#292929',
-    'gray.400': '#5C5C5C',
-    'gray.300': '#707070',
-    'gray.200': '#E0E0E0',
-    'gray.50': '#F5F5F5',
+    'red.500': '#C42847',
+    // 'gray.900': '#070707',
+    // 'gray.800': '#141414',
+    // 'gray.700': '#1F1F1F',
+    // 'gray.600': '#292929',
+    // 'gray.400': '#5C5C5C',
+    // 'gray.300': '#707070',
+    // 'gray.200': '#E0E0E0',
+    // 'gray.50': '#F5F5F5',
   },
   fonts: {
     heading: 'Montserrat',

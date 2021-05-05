@@ -1,6 +1,5 @@
 import { useDisclosure, UseDisclosureReturn } from '@chakra-ui/hooks';
-import { useRouter } from 'next/dist/client/router';
-import { createContext, ReactNode, useContext, useEffect } from 'react';
+import { createContext, ReactNode, useContext } from 'react';
 
 interface ChatDrawerProviderProps {
   children: ReactNode;
@@ -12,7 +11,7 @@ const SidebarDrawerContext = createContext({} as ChatDrawerContextData);
 
 export function ChatDrawerProvider({ children }: ChatDrawerProviderProps) {
   const disclosure = useDisclosure();
-
+  console.log('drawer disclousre', disclosure);
   return (
     <SidebarDrawerContext.Provider value={disclosure}>
       {children}

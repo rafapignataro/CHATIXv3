@@ -36,10 +36,13 @@ export const ChatFooter = ({ handleSubmit }: ChatFooterProps) => {
           />
           <Input
             placeholder="Type your message"
-            bg="gray.800"
+            // bg="gray.800"
             focusBorderColor="red.500"
             border="2px"
-            borderColor="transparent"
+            borderColor="gray.700"
+            _hover={{
+              borderColor: 'red.500',
+            }}
           />
         </InputGroup>
         <IconButton
