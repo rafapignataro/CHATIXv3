@@ -34,7 +34,7 @@ export const RoomsScreen = ({}: RoomsScreenProps) => {
               children={<FiSearch color="gray.800" />}
             />
             <Input
-              placeholder="Search for rooms"
+              placeholder="Search"
               bg="gray.800"
               focusBorderColor="red.500"
               border="2px"

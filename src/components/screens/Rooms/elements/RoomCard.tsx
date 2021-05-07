@@ -2,8 +2,8 @@ import {
   Avatar,
   AvatarGroup,
   Box,
-  Button,
   Flex,
+  Button,
   Heading,
   HStack,
   Icon,
@@ -14,7 +14,19 @@ import NextLink from 'next/link';
 import React from 'react';
 import { FaUsers } from 'react-icons/fa';
 
-import getRandom from '../../../../utils/getRandom';
+import { getRandom } from '../../../../utils/getRandom';
+import { getRandomAvatar } from '../../../../utils/getRandomAvatar';
+
+const titles = [
+  'This is a possible title',
+  'Talking about everything in this room',
+  'talking about family',
+  'talking about technology',
+  'I dont know what to put here',
+  'How can technology effect the world and the people?',
+  'Is Tesla going to the mars in next year or it will never go?',
+  'Is Tesla going to the mars in next year or it will never go? Is Tesla going to the mars in next year or it will never go? ',
+];
 
 interface RoomCardProps {}
 
@@ -36,25 +48,20 @@ export const RoomCard = ({}: RoomCardProps) => {
           borderColor: 'red.500',
         }}
       >
-        <Flex>
+        <Flex align="center" mb="4">
           <Avatar
-            src="https://bit.ly/dan-abramov"
-            borderColor="red.500"
-            borderWidth="2px"
+            name="Rafael Pignataro"
+            src={getRandomAvatar()}
+            borderColor="gray.700"
+            borderWidth="3px"
             mr="2"
+            size="lg"
           />
-          <Flex direction="column" flex="1">
-            <Heading
-              as="h3"
-              mb="1"
-              fontSize="md"
-              fontWeight="regular"
-              isTruncated
-            >
-              Falando sobre x, y e
-              zdddddddddddddddddddddddddddddddddddddddddedededeedededededed
-            </Heading>
-            <HStack spacing="1" mb="4">
+          <Flex direction="column" width="100%" overflow="hidden">
+            <Text fontWeight="semibold" lineHeight="1" mb="2" isTruncated>
+              {titles[getRandom(titles.length)]}
+            </Text>
+            <HStack spacing="1">
               <Text bg="gray.700" fontSize="small" borderRadius="md" px="2">
                 Portuguese
               </Text>
@@ -64,7 +71,6 @@ export const RoomCard = ({}: RoomCardProps) => {
             </HStack>
           </Flex>
         </Flex>
-
         <AvatarGroup size="sm" spacing="-1" max={6}>
           <Avatar
             name="Vinicius Junqueira"
