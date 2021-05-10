@@ -35,10 +35,10 @@ const Button = ({ children, text, Icon, onClick, ...props }: ButtonProps) => {
       {...props}
       fontWeight="regular"
       onClick={onClick}
-      bg="gray.800"
+      bg="red.500"
       rightIcon={Icon ? <ChakraIcon as={Icon} /> : null}
       _hover={{
-        bg: 'red.500',
+        bg: 'red.400',
       }}
     >
       {text}

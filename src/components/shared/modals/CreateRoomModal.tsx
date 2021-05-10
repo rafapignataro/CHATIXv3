@@ -1,4 +1,5 @@
 import {
+  Box,
   FormControl,
   FormHelperText,
   FormLabel,
@@ -12,18 +13,38 @@ import {
   ModalOverlay,
   Switch,
   useDisclosure,
+  VStack,
 } from '@chakra-ui/react';
 import React, { useRef } from 'react';
-import { useCreateRoomModal } from '../../screens/Chat/contexts/CreateRoomModalContext';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
 import Button from '../Button';
+import { CustomInput } from '../Form/CustomInput';
 
-interface CreateRoomModalProps {}
+type CreateRoomFormData = {
+  name: string;
+  password: string;
+};
 
-export const CreateRoomModal = ({}: CreateRoomModalProps) => {
-  const { isOpen, onClose } = useCreateRoomModal();
-  console.log('Modal', isOpen);
+interface CreateRoomModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export const CreateRoomModal = ({ isOpen, onClose }: CreateRoomModalProps) => {
   const initialRef = useRef();
+
+  const { register, handleSubmit, formState } = useForm();
+  const { errors } = formState;
+
+  const handleCreateRoom: SubmitHandler<CreateRoomFormData> = async values => {
+    return new Promise(resolve =>
+      setTimeout(() => {
+        console.log(values);
+        resolve(values);
+      }, 1000)
+    );
+  };
 
   return (
     <Modal
@@ -34,25 +55,43 @@ export const CreateRoomModal = ({}: CreateRoomModalProps) => {
       size="lg"
     >
       <ModalOverlay />
-      <ModalContent bg="gray.800">
+      <ModalContent bg="gray.900">
         <ModalHeader>Create a room</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody pb={6}>
-          <FormControl isRequired mb="4">
-            <FormLabel>Room name</FormLabel>
-            <Input placeholder="Type your room name" />
-          </FormControl>
-          <FormControl mb="4">
-            <FormLabel>Password</FormLabel>
-            <Input placeholder="Type your room name" />
-            <FormHelperText color="gray.300">
-              Leave blank for public room.
-            </FormHelperText>
-          </FormControl>
-        </ModalBody>
-        <ModalFooter>
-          <Button text="Create" w="100%" />
-        </ModalFooter>
+        <ModalCloseButton
+          _hover={{
+            color: 'red.500',
+          }}
+        />
+        <Box as="form" onSubmit={handleSubmit(handleCreateRoom)}>
+          <ModalBody>
+            <VStack spacing="6">
+              <CustomInput
+                name="name"
+                label="Room name"
+                placeholder="The room name"
+                isRequired={true}
+                error={errors.name}
+                {...register('name')}
+              />
+              <CustomInput
+                type="password"
+                name="password"
+                label="Room password"
+                placeholder="The room password"
+                helperText="Leave blank if the room is public"
+                error={errors.password}
+                {...register('password')}
+              />
+            </VStack>
+          </ModalBody>
+          <ModalFooter>
+            <Button
+              size="lg"
+              text="Create"
+              isLoading={formState.isSubmitting}
+            />
+          </ModalFooter>
+        </Box>
       </ModalContent>
     </Modal>
   );

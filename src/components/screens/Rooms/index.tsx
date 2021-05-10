@@ -5,21 +5,23 @@ import {
   InputGroup,
   InputLeftElement,
   SimpleGrid,
+  useDisclosure,
 } from '@chakra-ui/react';
 import React from 'react';
 import { FiPlus, FiSearch } from 'react-icons/fi';
 
 import AppLayout from '../../layouts/AppLayout/AppLayout';
 import Button from '../../shared/Button';
-import { useCreateRoomModal } from '../Chat/contexts/CreateRoomModalContext';
+import { CreateRoomModal } from '../../shared/modals/CreateRoomModal';
 import { RoomCard } from './elements/RoomCard';
 
 interface RoomsScreenProps {}
 
 export const RoomsScreen = ({}: RoomsScreenProps) => {
-  const { onOpen } = useCreateRoomModal();
+  const { onOpen, isOpen, onClose } = useDisclosure();
   return (
     <AppLayout title="Rooms">
+      <CreateRoomModal isOpen={isOpen} onClose={onClose} />
       <Flex
         align="center"
         justify="space-between"
@@ -36,11 +38,11 @@ export const RoomsScreen = ({}: RoomsScreenProps) => {
             <Input
               placeholder="Search"
               bg="gray.800"
-              focusBorderColor="red.500"
+              focusBorderColor="gray.700"
               border="2px"
               borderColor="transparent"
               _hover={{
-                borderColor: 'red.500',
+                borderColor: 'gray.700',
               }}
             />
           </InputGroup>
