@@ -1,14 +1,21 @@
 import { Box, Flex } from '@chakra-ui/react';
 import React, { ChangeEvent, MouseEvent, useEffect, useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+
+import firebase from '../../../services/firebase';
+
 import { ChatDrawerProvider } from './contexts/ChatDrawerContext';
 import { ChatDrawer } from './elements/ChatDrawer';
-
 import { ChatFooter } from './elements/ChatFooter';
 import { ChatHeader } from './elements/ChatHeader';
 import { ChatMain } from './elements/ChatMain';
 import { Message } from './interfaces/Message';
 
 interface ChatRoomScreenProps {}
+
+interface HandleNewMessageData {
+  message: string;
+}
 
 const MESSAGES = [
   {
@@ -104,50 +111,57 @@ const chatRoom = {
 };
 
 export const ChatRoomScreen = ({}: ChatRoomScreenProps) => {
-  const [isAsideOpen, setIsAsideOpen] = useState<boolean>(false);
   const [messages, setMessages] = useState<Message[]>([]);
 
+  const messagesRef = firebase.firestore().collection('messages');
+
   useEffect(() => {
-    setMessages(MESSAGES);
+    (async function () {
+      messagesRef.onSnapshot(query =>
+        query.forEach(doc => {
+          console.log('--------');
+          console.log(doc.data());
+        })
+      );
+    })();
   }, []);
 
-  const handleHamburgerMenu = () => {
-    setIsAsideOpen(!isAsideOpen);
-  };
+  const { register, handleSubmit, formState, reset } = useForm();
 
-  const handleNewMessageSent = (text: string) => {
-    const authors = {
-      0: 'Rafael Pignataro',
-      1: 'Lucas Zillig',
-      2: 'Vinicius Junqueira',
-      3: 'Leonardo Lopes',
+  const handleNewMessage: SubmitHandler<HandleNewMessageData> =
+    async values => {
+      const user = { name: 'Rafael Pignataro' };
+      const currentDate = new Date();
+      const hours =
+        currentDate.getHours() === 0 ? '00' : currentDate.getHours();
+      const minutes =
+        currentDate.getMinutes() < 10
+          ? `0${currentDate.getMinutes()}`
+          : currentDate.getMinutes();
+
+      const date = `${hours}:${minutes}`;
+
+      setMessages([
+        ...messages,
+        {
+          author: user.name,
+          date,
+          content: values.message,
+        },
+      ]);
+
+      reset();
     };
-
-    const currentDate = new Date();
-    const hours = currentDate.getHours() === 0 ? '00' : currentDate.getHours();
-    const minutes =
-      currentDate.getMinutes() < 10
-        ? `0${currentDate.getMinutes()}`
-        : currentDate.getMinutes();
-
-    const date = `${hours}:${minutes}`;
-
-    setMessages([
-      ...messages,
-      {
-        author: authors[Math.floor(Math.random() * Math.floor(2))],
-        date,
-        content: text,
-      },
-    ]);
-  };
 
   return (
     <ChatDrawerProvider>
       <ChatDrawer />
       <ChatHeader title={chatRoom.name} />
       <ChatMain messages={messages} />
-      <ChatFooter handleSubmit={handleNewMessageSent} />
+      <ChatFooter
+        handleSubmit={handleSubmit(handleNewMessage)}
+        fieldRegister={register}
+      />
     </ChatDrawerProvider>
   );
 };

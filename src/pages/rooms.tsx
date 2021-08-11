@@ -4,7 +4,7 @@ import { RoomsScreen } from '../components/screens/Rooms';
 
 interface roomsProps {}
 
-const Rooms: React.FC<roomsProps> = ({}) => {
+const Rooms = ({}: roomsProps) => {
   return <RoomsScreen />;
 };
 export default Rooms;

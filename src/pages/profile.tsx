@@ -4,7 +4,7 @@ import { ProfileScreen } from '../components/screens/Profile';
 
 interface profileProps {}
 
-const profile: React.FC<profileProps> = ({}) => {
+const Profile = ({}: profileProps) => {
   return <ProfileScreen />;
 };
-export default profile;
+export default Profile;

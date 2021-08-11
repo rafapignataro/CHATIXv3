@@ -14,7 +14,6 @@ const ConfigScreen: React.FC<ConfigScreenProps> = ({}) => {
   }, []);
 
   const switchTheme = () => {
-    console.log(theme);
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 

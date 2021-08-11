@@ -40,7 +40,6 @@ export const CreateRoomModal = ({ isOpen, onClose }: CreateRoomModalProps) => {
   const handleCreateRoom: SubmitHandler<CreateRoomFormData> = async values => {
     return new Promise(resolve =>
       setTimeout(() => {
-        console.log(values);
         resolve(values);
       }, 1000)
     );
@@ -69,15 +68,18 @@ export const CreateRoomModal = ({ isOpen, onClose }: CreateRoomModalProps) => {
                 name="name"
                 label="Room name"
                 placeholder="The room name"
+                size="lg"
                 isRequired={true}
                 error={errors.name}
                 {...register('name')}
+                ref={initialRef}
               />
               <CustomInput
                 type="password"
                 name="password"
                 label="Room password"
                 placeholder="The room password"
+                size="lg"
                 helperText="Leave blank if the room is public"
                 error={errors.password}
                 {...register('password')}
@@ -88,6 +90,7 @@ export const CreateRoomModal = ({ isOpen, onClose }: CreateRoomModalProps) => {
             <Button
               size="lg"
               text="Create"
+              type="submit"
               isLoading={formState.isSubmitting}
             />
           </ModalFooter>

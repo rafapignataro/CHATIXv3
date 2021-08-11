@@ -8,7 +8,7 @@ interface ChatMainProps {
   messages: Message[];
 }
 
-const USERNAME = 'Rafael 1';
+const USERNAME = 'Rafael Pignataro';
 
 export const ChatMain = ({ messages }: ChatMainProps) => {
   const bottomRef = useRef<HTMLDivElement>(null);

@@ -27,12 +27,14 @@ export const ChatHeader = ({ title }: ChatHeaderProps) => {
       >
         <Flex align="center">
           <NextLink href="/rooms" passHref>
-            <IconButton
-              aria-label="Return to home link"
-              icon={<FiHome />}
-              size="md"
-              fontSize="24"
-            />
+            <a>
+              <IconButton
+                aria-label="Return to home link"
+                icon={<FiHome />}
+                size="md"
+                fontSize="24"
+              />
+            </a>
           </NextLink>
           <Heading ml="2" as="h1" size="lg" color="gray.200">
             Room 1354

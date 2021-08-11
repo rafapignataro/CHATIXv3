@@ -1,18 +1,6 @@
-import {
-  Avatar,
-  AvatarGroup,
-  Box,
-  Flex,
-  Button,
-  Heading,
-  HStack,
-  Icon,
-  Link,
-  Text,
-} from '@chakra-ui/react';
+import { Avatar, AvatarGroup, Flex, HStack, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import React from 'react';
-import { FaUsers } from 'react-icons/fa';
 
 import { getRandom } from '../../../../utils/getRandom';
 import { getRandomAvatar } from '../../../../utils/getRandomAvatar';

@@ -6,19 +6,35 @@ import {
   InputLeftElement,
   SimpleGrid,
   useDisclosure,
+  Spinner,
 } from '@chakra-ui/react';
 import React from 'react';
 import { FiPlus, FiSearch } from 'react-icons/fi';
+import { signIn, signOut, useSession } from 'next-auth/client';
 
 import AppLayout from '../../layouts/AppLayout/AppLayout';
 import Button from '../../shared/Button';
+import { CustomInput } from '../../shared/Form/CustomInput';
 import { CreateRoomModal } from '../../shared/modals/CreateRoomModal';
 import { RoomCard } from './elements/RoomCard';
+import { debounce } from '../../../utils/debounce';
+import { SubmitHandler, useForm } from 'react-hook-form';
+
+interface handleSearchFormData {
+  text: string;
+}
 
 interface RoomsScreenProps {}
 
 export const RoomsScreen = ({}: RoomsScreenProps) => {
   const { onOpen, isOpen, onClose } = useDisclosure();
+  const { register, handleSubmit, formState } = useForm();
+  const handleSearchFormSubmit: SubmitHandler<handleSearchFormData> = async ({
+    text,
+  }) => {
+    return new Promise(resolve => setTimeout(() => resolve(text), 1200));
+  };
+
   return (
     <AppLayout title="Rooms">
       <CreateRoomModal isOpen={isOpen} onClose={onClose} />
@@ -29,24 +45,21 @@ export const RoomsScreen = ({}: RoomsScreenProps) => {
         w="100%"
         maxW={1280}
       >
-        <Flex as="form" align="center">
-          <InputGroup>
-            <InputLeftElement
-              pointerEvents="none"
-              children={<FiSearch color="gray.800" />}
-            />
-            <Input
-              placeholder="Search"
-              bg="gray.800"
-              focusBorderColor="gray.700"
-              border="2px"
-              borderColor="transparent"
-              _hover={{
-                borderColor: 'gray.700',
-              }}
-            />
-          </InputGroup>
+        <Flex
+          as="form"
+          align="center"
+          onSubmit={handleSubmit(handleSearchFormSubmit)}
+        >
+          <CustomInput
+            name="search"
+            placeholder="Search"
+            Icon={FiSearch}
+            {...register('text')}
+            mr="4"
+          />
+          {formState.isSubmitting && <Spinner color="red.500" />}
         </Flex>
+
         <Button ml="4" text="Create room" Icon={FiPlus} onClick={onOpen} />
       </Flex>
       <SimpleGrid

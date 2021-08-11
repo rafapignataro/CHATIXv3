@@ -22,7 +22,7 @@ export const ChatMessage = ({ message, isAuthor }: ChatMessageProps) => {
               {message.author} - {message.date}
             </Text>
             <Flex
-              bg="gray.800"
+              bg="gray.700"
               fontSize="sm"
               p="2"
               borderRadius="md"
@@ -43,7 +43,7 @@ export const ChatMessage = ({ message, isAuthor }: ChatMessageProps) => {
         <Flex direction="column" align="flex-end">
           <Text fontSize="xs">{message.date} - You</Text>
           <Flex
-            bg="gray.700"
+            bg="red.500"
             fontSize="sm"
             p="2"
             borderRadius="md"
