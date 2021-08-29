@@ -1,3 +1,12 @@
+html,
+body {
+  height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+/* Scrollbar */
+
 /* width */
 ::-webkit-scrollbar {
   width: 0.5rem;
