@@ -22,7 +22,6 @@ export const theme = extendTheme({
   styles: {
     global: {
       'html, body': {
-        minHeight: '100vh',
         minHeight: '-webkit-fill-available',
       },
       body: {
