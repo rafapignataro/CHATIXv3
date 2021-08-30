@@ -21,6 +21,10 @@ export const theme = extendTheme({
   },
   styles: {
     global: {
+      'html, body': {
+        minHeight: '100vh',
+        minHeight: '-webkit-fill-available',
+      },
       body: {
         bg: 'gray.900',
         color: 'gray.50',
